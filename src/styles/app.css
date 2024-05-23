@@ -1,0 +1,10 @@
+.cv-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+
+  min-width: 720px;
+  border: solid 2px rgba(255, 255, 255, 0.87);
+  border-radius: 10px;
+}
