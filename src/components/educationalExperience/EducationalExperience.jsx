@@ -1,3 +1,12 @@
+import AddForm from './AddForm.jsx';
+
 export default function EducationalExperience() {
-  return <p>Educational experience parent component</p>;
+  return (
+    <>
+      <h2>Educational experience</h2>
+      <div className="form-container">
+        <AddForm />
+      </div>
+    </>
+  );
 }
