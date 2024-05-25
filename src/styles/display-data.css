@@ -1,0 +1,11 @@
+.data-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 340px;
+  gap: 20px;
+}
+
+.display-left,
+p {
+  margin-bottom: 4px;
+}
