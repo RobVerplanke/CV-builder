@@ -1,11 +1,51 @@
-import AddForm from './AddForm.jsx';
+import { useState } from 'react';
+import Form from './Form.jsx';
+import DisplayData from './DisplayData.jsx';
 
 export default function PracticalExperience() {
+  const [formStatus, setFormStatus] = useState('add');
+
+  const [inputValues, setInputValues] = useState({
+    companyName: '',
+    function: '',
+    responsibilities: '',
+    from: '',
+    to: '',
+  });
+
+  function handleChange(inputName, newValue) {
+    setInputValues((prevValues) => ({ ...prevValues, [inputName]: newValue }));
+  }
+
+  function handleAddSubmit(e) {
+    e.preventDefault();
+    setFormStatus('added');
+  }
+
+  function handleEditSubmit(e) {
+    e.preventDefault();
+    setFormStatus('add');
+  }
+
   return (
     <>
       <h2>Practical experience</h2>
       <div className="form-container">
-        <AddForm />
+        {formStatus === 'add' && (
+          <Form
+            values={inputValues}
+            handleChange={handleChange}
+            handleAddSubmit={handleAddSubmit}
+            formStatus={formStatus}
+          />
+        )}
+        {formStatus === 'added' && (
+          <DisplayData
+            values={inputValues}
+            handleEditSubmit={handleEditSubmit}
+            formStatus={formStatus}
+          />
+        )}
       </div>
     </>
   );
