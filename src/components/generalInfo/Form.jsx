@@ -1,7 +1,12 @@
 import { useId } from 'react';
 import { BuildInputField, BuildButton } from '../Utils.jsx';
 
-export default function AddForm({ values, handleChange, handleSubmit }) {
+export default function Form({
+  values,
+  handleChange,
+  handleAddSubmit,
+  formStatus,
+}) {
   return (
     <form>
       <BuildInputField
@@ -36,7 +41,7 @@ export default function AddForm({ values, handleChange, handleSubmit }) {
         id={useId()}
         onChange={handleChange}
       />
-      <BuildButton name="Add" onClick={handleSubmit} />
+      <BuildButton onClick={handleAddSubmit} formStatus={formStatus} />
     </form>
   );
 }

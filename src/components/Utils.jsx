@@ -25,10 +25,11 @@ export function BuildInputField({
   );
 }
 
-export function BuildButton({ name, onClick }) {
+export function BuildButton({ onClick, formStatus }) {
   return (
     <button type="submit" onClick={onClick}>
-      {name}
+      {formStatus === 'add' && 'Submit'}
+      {formStatus === 'added' && 'Edit'}
     </button>
   );
 }

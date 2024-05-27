@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AddForm from './AddForm.jsx';
+import Form from './Form.jsx';
 import DisplayData from './DisplayData.jsx';
 
 export default function GeneralInfo() {
@@ -16,9 +16,14 @@ export default function GeneralInfo() {
     setInputValues((prevValues) => ({ ...prevValues, [inputName]: newValue }));
   }
 
-  function handleSubmit(e) {
+  function handleAddSubmit(e) {
     e.preventDefault();
     setFormStatus('added');
+  }
+
+  function handleEditSubmit(e) {
+    e.preventDefault();
+    setFormStatus('add');
   }
 
   return (
@@ -26,13 +31,20 @@ export default function GeneralInfo() {
       <h2>General information</h2>
       <div className="form-container">
         {formStatus === 'add' && (
-          <AddForm
+          <Form
             values={inputValues}
             handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            handleAddSubmit={handleAddSubmit}
+            formStatus={formStatus}
           />
         )}
-        {formStatus === 'added' && <DisplayData values={inputValues} />}
+        {formStatus === 'added' && (
+          <DisplayData
+            values={inputValues}
+            handleEditSubmit={handleEditSubmit}
+            formStatus={formStatus}
+          />
+        )}
       </div>
     </>
   );

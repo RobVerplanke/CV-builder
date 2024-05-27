@@ -1,7 +1,7 @@
 import { BuildButton } from '../Utils.jsx';
 import '../../styles/display-data.css';
 
-export default function DisplayData({ values }) {
+export default function DisplayData({ values, handleEditSubmit, formStatus }) {
   return (
     <>
       <div className="display-container">
@@ -19,7 +19,7 @@ export default function DisplayData({ values }) {
             <p>{values.phone}</p>
           </div>
         </div>
-        <BuildButton name="Edit" />
+        <BuildButton onClick={handleEditSubmit} formStatus={formStatus} />
       </div>
     </>
   );
