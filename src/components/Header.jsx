@@ -5,12 +5,12 @@ export default function Header() {
     <div className="header-container">
       <h1>CV-Builder</h1>
       <sub>
-        By Rob Verplanke
+        By RV
         <a href="https://github.com/RobVerplanke/cv-builder">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             fill="currentColor"
             class="bi bi-github"
             viewBox="0 0 16 16"

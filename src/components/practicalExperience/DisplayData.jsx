@@ -8,8 +8,8 @@ export default function DisplayData({ values, handleEditSubmit, formStatus }) {
         <div className="data-container">
           <div className="display-left">
             <p>Company name:</p>
-            <p>function:</p>
-            <p>responsibilities:</p>
+            <p>Function:</p>
+            <p>Main responsibilities:</p>
             <p>From:</p>
             <p>To:</p>
           </div>
